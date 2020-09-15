@@ -41,7 +41,7 @@ public class DropDownRecap extends CommonMethods {
 		//this will give you the number of items in a dropdown 
 		System.out.println(options.size());
 		
-		//storing the list of option in iterator so we can loop through
+		//storing the list of option in iterator so we can loop through 
 		Iterator<WebElement> it=options.iterator();
 		while(it.hasNext()) {
 			it.next().click();

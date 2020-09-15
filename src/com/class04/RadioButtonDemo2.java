@@ -25,10 +25,18 @@ public class RadioButtonDemo2 extends CommonMethods {
 			driver.findElement(By.linkText("Radio Buttons Demo")).click();
 			
 			//find group of web element of type radio button
+			WebElement radioButtons1 = (WebElement) driver.findElements(By.name("optradio"));
 			List<WebElement> radioButtons = driver.findElements(By.name("optradio"));
-
+			
 //			String maleRB=radioButtons.get(0).getAttribute("value");
 //			System.out.println(maleRB);
+			
+			for(int i=0;i<radioButtons.size();i++) {
+				String text=radioButtons.get(i).getAttribute("value");
+				if(text.equals("Male")) {
+					radioButtons1.click();
+				}
+			}
 			
 			for(WebElement element :radioButtons) {
 				String text=element.getAttribute("value");

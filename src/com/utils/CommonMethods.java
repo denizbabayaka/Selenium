@@ -13,11 +13,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 //ctrl+o---> to see all methods within the class
 public class CommonMethods {
 
-	public static WebDriver driver; // variable driver is type of WebDriver
+	public static WebDriver driver; // variable driver is type of WebDriver which is interface
 
 	/**
 	 * Use this method in need of opening browser and target url
@@ -28,14 +30,14 @@ public class CommonMethods {
 
 	public static void setUp(String browser, String url) {
 		if (browser.equalsIgnoreCase("chrome")) {
+			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 			driver = new ChromeDriver();
-		
 
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
-			
+
 		} else {
 			System.err.println("Browser not supported");
 		}
@@ -93,6 +95,7 @@ public class CommonMethods {
 			return null;
 		}
 	}
+
 	/**
 	 * This method with switch to the frame
 	 * 
@@ -134,58 +137,67 @@ public class CommonMethods {
 			System.out.println("Frame is not present");
 		}
 	}
+
 	/**
 	 * This method will click on the element using JSExecutor
+	 * 
 	 * @param element
 	 */
-      
-	 public static void jsClick(WebElement element) {
-		 JavascriptExecutor js=(JavascriptExecutor)driver;
-		 js.executeScript("argument[0].click();",element);
-	 }
-	 /**
-	  * This method will scroll until specified element
-	  * @param element
-	  */
-	 
-	 public static void scrollIntoElement(WebElement element) {
-		 JavascriptExecutor js=(JavascriptExecutor)driver;
-		 js.executeScript("arguments[0].scrollIntoView(true);", element);
-	 }
-	 /**
-	  * This method will scroll page down 
-	  * @param pixel
-	  */
-	 
-	 public static void scrollDown(int pixel) {
-		 JavascriptExecutor js=(JavascriptExecutor)driver;
-		 js.executeScript("window.scrollBy(0,"+pixel+")");
-	 }
-	 /**
-	  * This method will scroll page up
-	  * @param pixel
-	  */
-	 
-	 public static void scrollUp(int pixel) {
-		 JavascriptExecutor js=(JavascriptExecutor)driver;
-		 js.executeScript("window.scrollBy(0,-"+pixel+")");
-	 }
-	 /**
-	  * This methods will take screenshots
-	     * 
-	     * @param fileName - New file name + Extension
-	     */
-	    public static void takeScreenshot(String fileName) {
-	    	String filePath = "C:\\Users\\deniz\\eclipse-workspace\\Selenium\\screenshots";
-	    	TakesScreenshot ts = (TakesScreenshot) driver; 
-	    	 File screen = ts.getScreenshotAs(OutputType.FILE);
-	        try {
-	            FileUtils.copyFile(screen, new File(filePath + fileName));
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	    }
-	 
+
+	public static void jsClick(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("argument[0].click();", element);
+	}
+
+	/**
+	 * This method will scroll until specified element
+	 * 
+	 * @param element
+	 */
+
+	public static void scrollIntoElement(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	/**
+	 * This method will scroll page down
+	 * 
+	 * @param pixel
+	 */
+
+	public static void scrollDown(int pixel) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0," + pixel + ")");
+	}
+
+	/**
+	 * This method will scroll page up
+	 * 
+	 * @param pixel
+	 */
+
+	public static void scrollUp(int pixel) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-" + pixel + ")");
+	}
+
+	/**
+	 * This methods will take screenshots
+	 * 
+	 * @param fileName - New file name + Extension
+	 */
+	public static void takeScreenshot(String fileName) {
+		String filePath = "C:\\Users\\deniz\\eclipse-workspace\\Selenium\\screenshots";
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File screen = ts.getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(screen, new File(filePath + fileName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 //         	public static WebDriver setUp(String browser,String url) {
 //        		if (browser.equalsIgnoreCase("chrome")) {
 //        			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");

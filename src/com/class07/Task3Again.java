@@ -15,13 +15,15 @@ public class Task3Again extends CommonMethods {
 		 
 		 WebElement elm=driver.findElement(By.xpath("//input[@type='text']"));
 		 
-		 if(!elm.isEnabled()) {
+		 boolean condition=elm.isEnabled();
+		 
+		 if(!condition) {
 			 driver.findElement(By.xpath("//button[text()='Enable']")).click();
 		 }
 		 WebDriverWait wait=new WebDriverWait(driver, 30);
 		 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("loading")));
 		 
-		 if(elm.isEnabled()) {
+		 if(condition) {
 			 elm.sendKeys("Hello");
 			 String value=elm.getAttribute("value");
 			 if(value.equals("Hello")) {

@@ -2,10 +2,17 @@ package com.class01;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class LunchChromeBrowser {
 
 	public static void main(String[] args) throws InterruptedException {
+		
+		// Line 13 and 15 codes does not give severe err code
+		
+		//System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY	,"true");
+		
+		System.setProperty("webdriver.chrome.silentOutput", "true");
 		
 		//system is a class setProperty(); is a static method
 		//                    Key                       Value

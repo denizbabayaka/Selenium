@@ -22,6 +22,7 @@ public class WebTableHandle extends CommonMethods {
 		String afterXpath="]/td[1]";
 		
 		for(int i=2;i<=rowCount;i++) {
+			// this will get row index number from row
 			String actualXpath=beforeXpath+i+afterXpath;
 			WebElement element=driver.findElement(By.xpath(actualXpath));
 			System.out.println(element.getText());

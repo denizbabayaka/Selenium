@@ -24,7 +24,7 @@ public class RecapRadioAndCheck extends CommonMethods {
 		// and then put them in loop which has a Web Element type of variable and check them one by one 
 		for(WebElement boxes:checkBoxes) {
 			
-			// this will get the value of boxes which assigned to a String variable
+			// this method will get the value of boxes and assigned to a String variable
 			String str=boxes.getAttribute("value");
 			//System.out.println("Text froma checkbox-----"+str);
 			

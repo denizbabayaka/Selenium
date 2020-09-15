@@ -26,7 +26,7 @@ public class DynamicTablesDemo extends CommonMethods {
 				
 				//once we find the element of the table then store it into a List which is type of WebElement
 				List<WebElement> rows=driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr"));
-				//then we loop it through all of them
+				//then we loop it through all of the rows 
 				for(int i=1; i<rows.size(); i++) {
 					//get the text and put them into String 
 					String rowText=rows.get(i-1).getText();

@@ -14,6 +14,8 @@ public class Task2 extends CommonMethods{
 		setUp("chrome", com.class04.Constants.HRMS_URL);
 		
 		
+		
+		
 		WebElement ss = driver.findElement(By.partialLinkText("Checkboxes"));
 		//clicking on checkbox
 		ss.click();

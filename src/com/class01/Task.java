@@ -29,6 +29,7 @@ public class Task {
 		Thread.sleep(2000);
 		driver.navigate().to("https://www.google.com/");
 		Thread.sleep(2000);
+		//back to syntax
 		driver.navigate().back();
 		Thread.sleep(2000);
 		driver.navigate().refresh();

@@ -20,7 +20,7 @@ public class RadioButtonDemo extends CommonMethods {
 		Thread.sleep(1000);
 		driver.findElement(By.linkText("Radio Buttons Demo")).click();
 		
-		//Find one webelemt
+		//Find one webelement
 		WebElement maleRadioB = driver.findElement(By.xpath("//input[@name='optradio' and @value='Male']"));
 		
 		//This will return boolean value, true if selected, false if not selected

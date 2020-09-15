@@ -19,7 +19,7 @@ public class XpathDemo {
 
 		//form[starts-with(@action,'/humanresource')]
 
-		//h1[text()='A place where knowledge becomes a creer']
+		//h1[text()='A place where knowledge becomes a career']
 
 		//h1[contains(text(),'Syntax')]
 

@@ -24,6 +24,7 @@ public class DropDownDemo2 extends CommonMethods{
 		
 		//Returns the list of all options present in the drop down 
 		List<WebElement>option=select.getOptions();
+		String str=option.toString();
 		
 		System.out.println("Size of the DD is "+option.size());
 		

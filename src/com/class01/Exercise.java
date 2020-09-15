@@ -8,7 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Exercise {
 
 	public static void main(String[] args) {
+		
+		// setProperty is build up method inside System class
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+		//Webdriver is an interface we create an object of chrome driver and giving references to WebDriver 
 		WebDriver driver = new ChromeDriver();
 		//http-->hypertext transfer protocol
 		driver.get("http://google.com");

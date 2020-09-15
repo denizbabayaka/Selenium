@@ -31,6 +31,7 @@ public class CheckBoxesDemo extends CommonMethods {
 		
 		System.out.println("*******Group of Check Boxes*********");
 		
+		// findElements returns us groups of elements inside the DOM
 		List<WebElement>groupCheckBox=driver.findElements(By.xpath("//input[@class='cb1-element']"));
 		
 		

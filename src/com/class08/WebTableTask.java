@@ -17,6 +17,7 @@ public class WebTableTask extends CommonMethods {
 		driver.findElement(By.linkText("Table")).click();
 		driver.findElement(By.linkText("Table Data Search")).click();
 		// Get Number of rows from the table
+		//since we need inserton order of the table we use list also list allows duplicates
 		List<WebElement> rows = driver.findElements(By.xpath("//table[@class='table']/tbody/tr"));
 
 		// Get Number of cols from the table

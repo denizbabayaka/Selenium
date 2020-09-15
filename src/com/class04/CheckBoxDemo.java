@@ -20,7 +20,7 @@ public class CheckBoxDemo extends CommonMethods{
 		
 		
 		//isEnabled() is used to see if the target element is enabled or disabled
-		System.out.println(loginBtn.isEnabled());// it brings us is the button enabled or not
+		System.out.println(loginBtn.isEnabled());// it brings us is the button enabled or not as true or false 
 		
 		
 		

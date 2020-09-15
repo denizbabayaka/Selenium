@@ -22,13 +22,14 @@ public class MultiWindowsDemo extends CommonMethods{
 		
 		//to get the ids of each windows, we use getWindowHandles();
 		//getWindowHandles() will return Set of IDs of all windows that currently opened via Webdriver
+		// here we are using set because set do not allow duplicates 
 		Set <String> allwindowsID=driver.getWindowHandles();
 		
 		//How many windows are opened
 		System.out.println("How main Windows opened: "+allwindowsID.size());
 		
 		
-		//To get each id from the iterator above, we use iterator
+		//To get each id from the iterator above, we use iterator with set we have to use iterator
 		Iterator<String> it = allwindowsID.iterator();
 		
 		//get the first id
